@@ -56,7 +56,7 @@ A digital signal is simply a sequence of values (*samples*) expressing a quantit
 A periodic signal is a signal that repeats itself after some time. The image below shows a few different periodic signals:
 
 <p align="center">
-<img src="https://cdn.eeweb.com/articles/articles/The-Basic-Quantities-of-AC-Waveform-1-1329569181.gif">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Waveforms.svg/600px-Waveforms.svg.png">
 </p>
 
 Periodic signals possess characteristics such as : **frequency**, **period**, **amplitude** and **phase**. The **frequency** is the number of cycles made by the signal per samples, the **period** represents the duration in samples of one cycle and is the reciprocal of the frequency ``1/frequency``, the amplitude is the highest absolute value of the signal and finally the **phase** is related to the position of the signal in the cycle, the phase is commonly expressed in degrees/radians.
