@@ -57,7 +57,6 @@ A periodic signal is a signal that repeats itself after some time. The image bel
 
 <p align="center">
 <img src="https://cdn.eeweb.com/articles/articles/The-Basic-Quantities-of-AC-Waveform-1-1329569181.gif">
-<legend>Common Periodic Signals</legend>
 </p>
 
 Periodic signals possess characteristics such as : **frequency**, **period**, **amplitude** and **phase**. The **frequency** is the number of cycles made by the signal per samples, the **period** represents the duration in samples of one cycle and is the reciprocal of the frequency ``1/frequency``, the amplitude is the highest absolute value of the signal and finally the **phase** is related to the position of the signal in the cycle, the phase is commonly expressed in degrees/radians.
@@ -150,7 +149,6 @@ The first transient signal presented is the **unit impulse**. An unit impulse is
 
 <p align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dirac_distribution_PDF.svg/488px-Dirac_distribution_PDF.svg.png">
-<legend>Unit Impulse</legend>
 </p>
 
 The unit impulse is computed as follows:
@@ -176,7 +174,6 @@ Another commonly used transient signal is the **unit step signal** calculated fr
 
 <p align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Dirac_distribution_CDF.svg/488px-Dirac_distribution_CDF.svg.png">
-<legend>Unit Step</legend>
 </p>
 
 The unit step is computed as follows:
@@ -199,12 +196,11 @@ An unit step is simply the cumulative sum of an unit impulse, that is ``step = c
 
 ## Convolution
 
-Convolution is one of the most important concepts in signal processing. Basically, convolution is a combination of two signals that output a third signal. The convolution is mathematically denoted by the symbol `*`, not to be confused with the multiplication symbol in programming.
-
 <p align="center">
 <img src="https://www.songho.ca/dsp/convolution/files/conv_commutative03.png">
-<legend>Convolution operation</legend>
 </p>
+
+Convolution is one of the most important concepts in signal processing. Basically, convolution is a combination of two signals that output a third signal. The convolution is mathematically denoted by the symbol `*`, not to be confused with the multiplication symbol in programming.
 
 One can think of convolution as a sliding dot-product, or alternatively as a weighted rolling sum. In Pinescript convolution would be computed as follows :
 
@@ -271,7 +267,6 @@ This is extremely useful if one want to use both impulse and step response in a 
 
 <p align="center">
 <img src="http://www.sciweavers.org/tex2img.php?eq=%5Csum_%7Bi%3D0%7D%5E%7BP-1%7D%20x%5Bn-i%5Dh%5Bi%5D&bc=Transparent&fc=Black&im=jpg&fs=36&ff=modern&edit=0" align="center" border="0" alt="\sum_{i=0}^{P-1} x[n-i]h[i]" width="325" height="150" />
-<legend>General Form Of FIR Filters</legend>
 </p>
 
 Filters allow us to modify the frequency content of a signal (*see Fourier transform/decomposition*) by removing/attenuating unwanted frequencies from the input signal, certain filters can also amplify certain frequencies in the signal.
@@ -302,7 +297,6 @@ There exist several types of filters that modify the frequency content of an inp
 
 <p align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Butterworth_response.svg/525px-Butterworth_response.svg.png">
-<legend>Low-pass filter frequency response</legend>
 </p>
 
 Low-pass filters are used to remove/attenuate higher frequencies of an input signal, which lead to a smooth output. In technical analysis moving averages are low-pass filters. The simplest low-pass filter is the simple (arithmetic) moving average, which convolve the input signal with a constant, that is the filter coefficients of a simple moving average are all equal to ``1/length`` where ``length`` is the filter length. In Pinescript the most efficient way to compute a simple moving average is by using the built-in `sma` function.
@@ -355,7 +349,6 @@ We can easily create all the other types of filters by using low-pass filters, t
 
 <p align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Hochpass_1._u._2._Ordnung.svg/600px-Hochpass_1._u._2._Ordnung.svg.png">
-<legend>High-pass filter frequency response</legend>
 </p>
 
 High-pass filters are used to remove/attenuate lower frequencies of an input signal, they therefore perform the contrary operation of low-pass filters. The sum of the coefficients of an high-pass filter with passband unity is equal to 0 with most of the time a majority of negative coefficients.
@@ -386,7 +379,6 @@ The impulse response of an high-pass filter is equal to `impulse - lowpass(impul
 
 <p align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Bandwidth_2.svg/450px-Bandwidth_2.svg.png">
-<legend>Band-pass filter frequency response</legend>
 </p>
 
 Band-pass filters are used to remove/attenuate lower and higher frequencies of an input signal, they therefore perform the operation of a low-pass and high-pass filters simultaneously. The sum of the coefficients of a band-pass filter with passband unity is like an high-pass filter equal to 0, however while most of the coefficients of an high-pass filters are negatives, band-pass filters possesses in general the same number of negative and positive coefficients.
@@ -408,7 +400,6 @@ The impulse response of a band-pass filter is equal to the convolution between t
 
 <p align="center">
 <img src="https://cdn.everythingrf.com/live/band-stop-filter_636711329725900220.gif">
-<legend>Band-stop filter frequency response</legend>
 </p>
 
 
@@ -563,7 +554,6 @@ gauss = sum/sumh
 
 <p align="center">
 <img src="https://www.researchgate.net/profile/Suhaib_Ahmed7/publication/282117297/figure/fig3/AS:453035328577538@1485023447964/Comparison-of-frequency-response-of-Low-Pass-FIR-Filters_Q320.jpg">
-<legend>Windowed sinc filters frequency response using different types of windows</legend>
 </p>
 
 The windowed sinc filter is a filter that try to approximate an ideal frequency response, that is a filter who would only remove or keep frequencies in the signal, but would not attenuate them. A sinc filter use a sinc function as filter kernel, but like the gaussian filter, such function require to be infinite in order for the filter to return an ideal frequency response, since this is impossible with FIR filters the sinc function is truncated.
@@ -603,7 +593,6 @@ the cut-off multiplier `cm` determine the number of local maxima/minima in the s
 
 <p align="center">
 <img src="http://www.sciweavers.org/upload/Tex2Img_1582825524/eqn.png"/>
-<legend>General Form Of IIR Filters</legend>
 </p>
 
 Unlike FIR filters who have an impulse response returning to steady state, IIR (*infinite impulse response*) filters have an infinitely long impulse response. IIR filters are also based on a weighted sum, however they use recursion, which means they use past outputs values as input. The use of recursion allow for extremely efficient filters, which was one of the downsides of FIR filters who require an high number of operations with larger filtering amounts (*higher `length`*), this is not the case with IIR filters.
@@ -669,7 +658,6 @@ All you need is the low-pass filter.
 
 <p align="center">
 <img src="https://tttapa.github.io/Pages/Mathematics/Systems-and-Control-Theory/Analog-Filters/images/Normalized-Butterworth-Filters-Frequency-Response.svg"/>
-<legend>Frequency Responses Of Butterworth Filters Using A Different Number Of Poles</legend>
 </p>
 
 The Butterworth filter is extremely popular because of its high frequency domain performances, the filter has no overshoots/undershoots and has a flat magnitude response. Some Butterworth filters with a different number of poles where described by Elhers [1] and are already available in the Pinescript repository.
