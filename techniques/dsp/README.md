@@ -29,7 +29,8 @@
 - [Rolling Signal To Noise Ratio](#rolling-signal-to-noise-ratio)
 - [Rolling Noise Factor](#rolling-noise-factor)
 - [Generating White Noise](#generating-white-noise)
-- [Estimating Signals Period](#generating-white-noise)
+- [Estimating Signals Period](#estimating-signals-period)
+- [Tips And Tricks](#tips-and-tricks)
 - [References](#references)
 - [About The Author](#about-the-author)
 
@@ -63,7 +64,7 @@ Periodic signals possess characteristics such as : **frequency**, **period**, **
 
 <hr>
 
-**SINE WAVE**
+#### Sine Wave
 
 The simplest periodic signal is the sine wave, with function computed in Pinescript as follows:
 
@@ -79,7 +80,7 @@ sinewave(period,amplitude,phase)=>
 
 <hr>
 
-**TRIANGULAR WAVE**
+#### Triangular Wave
 
 A triangular wave function is computed in Pinescript is as follows:
 
@@ -92,7 +93,7 @@ triangle(period,amplitude,phase)=>
 ```
 <hr>
 
-**SQUARE WAVE**
+#### Square Wave
 
 A square wave function is computed in Pinescript is as follows:
 
@@ -108,7 +109,7 @@ square(period,amplitude,phase)=>
 
 <hr>
 
-**SAWTOOTH WAVE**
+#### Sawtooth Wave
 
 A sawtooth wave function is computed in Pinescript is as follows:
 
@@ -143,7 +144,7 @@ Transient signals are signals that show a sudden change in their values, they ar
 
 <hr>
 
-**UNIT IMPULSE**
+#### Unit Impulse
 
 The first transient signal presented is the **unit impulse**. An unit impulse is simply a signal equal to 0 except at one point where it is equal to 1. The unit impulse is made from the unit impulse function, also called Dirac delta function denoted *δ(x)* and output 1 when *x* = 0 and 0 otherwise.
 
@@ -169,7 +170,7 @@ impulse = n == k ? 1 : 0
 where ``k`` is the position in time of the impulse.
 <hr>
 
-**UNIT STEP SIGNAL**
+#### Unit Step
 
 Another commonly used transient signal is the **unit step signal** calculated from the unit step function also called Heavyside step function.
 
@@ -443,11 +444,10 @@ where `w(i)` is a windowing function with argument `i`. There exist a wide varie
 
 <hr>
 
-**BLACKMAN WINDOW**
+#### Blackman Window
 
 <p align="center">
 <img src="https://docs.scipy.org/doc/numpy/_images/numpy-blackman-1_00_00.png">
-<legend>Blackman Window</legend>
 </p>
 
 The Blackman window is a window with a symmetrical shape consisting on the sum of 2 cosine waves. In Pinescript the function of a Blackman window can be computed follows:
@@ -462,11 +462,10 @@ Where `length` is the filter length.
 
 <hr>
 
-**BARTLETT WINDOW**
+#### Bartlett Window
 
 <p align="center">
 <img src="https://docs.scipy.org/doc/numpy/_images/numpy-bartlett-1_00_00.png">
-<legend>Bartlett Window</legend>
 </p>
 
 The Bartlett window, also called triangular window is a window with a triangular shape. In Pinescript the function of a Bartlett window can be computed follows:
@@ -481,14 +480,13 @@ The convolution between an input signal and a Bartlett function is the same as a
 
 <hr>
 
-**HANN WINDOW**
+#### Hann Window
 
 <p align="center">
 <img src="https://docs.scipy.org/doc/numpy/_images/numpy-hanning-1_00_00.png">
-<legend>Hann Window</legend>
 </p>
 
-The Hann window, also called Hanning window is similar to the blackman window but is wider. In Pinescript the function of an Hann window can be computed follows:
+The Hann window, also called Hanning window is similar to the Blackman window but is wider. In Pinescript the function of an Hann window can be computed follows:
 
 ```
 hann(x) =>
@@ -531,7 +529,6 @@ here all you need to do is to put the calculation generating your filter coeffic
 
 <p align="center">
 <img src="https://www.researchgate.net/publication/332177156/figure/fig1/AS:743600858075137@1554299668844/Frequency-responses-of-some-Gaussian-like-MTFs-versus-the-ideal-filter.png">
-<legend>Gaussian Filter Frequency Response</legend>
 </p>
 
 A gaussian filter is a filter using a gaussian function as kernel, the gaussian function is characterized by its symmetrical bell shaped curve and has many properties that make the gaussian filter extremely useful in certain situations.
@@ -774,7 +771,7 @@ period(input)=>
 
 </br>
 
-### Tips And Tricks
+## Tips And Tricks
 
 * Using `2*input - input[length/2]` as input for a low-pass filter with length `length` would reduce the filter lag.
 
