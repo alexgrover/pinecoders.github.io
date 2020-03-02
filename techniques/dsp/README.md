@@ -592,7 +592,7 @@ the cut-off multiplier `cm` determine the number of local maxima/minima in the s
 ## IIR Filter Design In Pinescript
 
 <p align="center">
-<img src="http://www.sciweavers.org/upload/Tex2Img_1582825524/eqn.png"/>
+<img src="http://www.sciweavers.org/tex2img.php?eq=y%5Bn%5D%20%3D%20%5Csum_%7Bi%3D0%7D%5E%7BP-1%7D%20b%5Bi%5Dx%5Bn-i%5D%20%2B%20%20%20%5Csum_%7Bj%3D1%7D%5E%7BQ%7D%20a%5Bj%5Dy%5Bn-j%5D&bc=Transparent&fc=Black&im=png&fs=30&ff=modern&edit=0" align="center" border="0" alt="y[n] = \sum_{i=0}^{P-1} b[i]x[n-i] +   \sum_{j=1}^{Q} a[j]y[n-j]" width="705" height="132" />
 </p>
 
 Unlike FIR filters who have an impulse response returning to steady state, IIR (*infinite impulse response*) filters have an infinitely long impulse response. IIR filters are also based on a weighted sum, however they use recursion, which means they use past outputs values as input. The use of recursion allow for extremely efficient filters, which was one of the downsides of FIR filters who require an high number of operations with larger filtering amounts (*higher `length`*), this is not the case with IIR filters.
