@@ -26,6 +26,7 @@
 - [IIR Filter Design In Pine Script](#iir-filter-design-in-pine-script)
 - [Butterworth IIR Filter](#butterworth-iir-filter)
 - [Gaussian IIR Filter](#gaussian-iir-filter)
+- [Filter Amplitude Response Estimation In Pinescript](#filter-amplitude-response-estimation-in-pinescript)
 - [Rolling Signal To Noise Ratio](#rolling-signal-to-noise-ratio)
 - [Rolling Noise Factor](#rolling-noise-factor)
 - [Generating White Noise](#generating-white-noise)
@@ -703,12 +704,25 @@ Many recursive implementations of the Gaussian filter exist and are way more eff
 
 <br/>
 
+## Filter Amplitude Response Estimation In Pinescript
+
+<p align="center">
+<img src="https://s3.tradingview.com/8/8OscQ8nM_mid.png"/>
+<legend>Low Resolution Amplitude Response Of A Simple Moving Average Computed With Pinescript</legend>
+</p>
+
+The amplitude (also called magnitude) response of a filter let you know exactly how your filter change the amplitude of the frequency components in the input signal.
+
+A tool able to plot an estimate of the amplitude response is available [here](https://www.tradingview.com/script/8OscQ8nM-Filter-Amplitude-Response-Estimator-A-Simple-Calculation/), see the post description for more information.
+
+<br/>
+
 ## Rolling Signal To Noise Ratio
 
 The signal to noise ratio (SNR) is used to measure the level of a signal relative to the level of unwanted noise, with a SNR inferior to 1 indicating more noise than signal. This metric is often expressed as the ratio of the mean and the standard deviation, however a rolling version could be more useful. The signal to noise ratio function can be computed in Pine Script as follows:
 
 ```
-snr(input) => sma(input,length)/stdev(input,length)
+snr(input,length) => sma(input,length)/stdev(input,length)
 ```
 
 <br/>
@@ -823,7 +837,7 @@ Note that a filter having negative coefficients (or low-lag in general) can prod
 ## About The Author
 
 <p align="left">
-<img src="https://s3.tradingview.com/userpics/435966-oREQ_big.png">
+<img src="https://s3.tradingview.com/userpics/435966-MxDA_big.png">
 </p>
 
 <br>
