@@ -471,9 +471,7 @@ Where `length` is the filter length.
 The Bartlett window, also called triangular window is a window with a triangular shape. In Pine Script the function of a Bartlett window can be computed follows:
 
 ```
-bartlett(x) =>
-    pi = 3.14159
-    1 - 2*abs(x - (length-1)/2)/(length-1)
+bartlett(x) => 1 - 2*abs(x - (length-1)/2)/(length-1)
 ```
 
 The convolution between an input signal and a Bartlett function is the same as applying a simple moving average twice `sma(sma(...))`.
